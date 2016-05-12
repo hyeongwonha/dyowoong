@@ -1,0 +1,58 @@
+.banner {
+  width: 108px;
+  height: 326px;
+  -webkit-transition: width 0.15s, height 0.15s;
+  transition: width 0.15s, height 0.15s;
+  transition-timing-function: ease-in-out;
+}
+
+.banner:hover {
+  width: 112px;
+  height: 338px;
+}
+
+.fast {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.normal {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.15s;
+}
+
+.slow {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.2s;
+}
+
+.bannerBox {
+  position: fixed;
+  z-index: 100;
+  width: 109px;
+  left: 50%;
+  top: 130px;
+  margin-left: -54.5px;
+  content:url("../images/banner_box_empty.png")
+}
+
+.bannerBox.full {
+  content:url("../images/banner_box_full.png")
+}
+
+.menu {
+  -webkit-transition: width 0.15s, height 0.15s;
+  transition: width 0.15s, height 0.15s;
+  transition-timing-function: ease-in-out;
+  width: 20%;
+}
+
+.menu:hover {
+  width: 20.5%;
+}
+
+.gone {
+  visibility: hidden;
+}
+
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>됴웅</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="sidebar"></div>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div style="position: fixed; top: 0; right: 0; padding-top: 20px; padding-right: 37px; z-index:100;" >
+        <a href="./tester.html">
+          <img src="./images/tester_button.png" width="160px" />
+        </a>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-1">
+          </div>
+          <div class="col-sm-11">
+            <div class="row">
+              <div class="col-sm-4">
+                <a href="./explore.html">
+                  <img src="./images/explore_button.png" width="280px" style="margin-top: 40px;"/>
+                </a>
+              </div>
+              <div class="col-sm-5">
+                <img src="./images/bongja_1.png" width="60px" style="margin-left: 30px; margin-top: 140px;"/>
+              </div>
+              <div class="col-sm-2">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-2">
+                <a href="./purchase.html">
+                  <img src="./images/purchase_button.png" width="120px" style="margin-top: 250px;" />
+                </a>
+              </div>
+              <div class="col-sm-6">
+                <a href="./introduce.html">
+                  <img src="./images/introduce_button.png" width="400px" style="margin-top: 30px;" />
+                </a>
+              </div>
+              <div class="col-sm-4">
+                <div class="row">
+                  <a href="./exhibition.html" >
+                    <img src="./images/exhibition_button.png" width="250px" />
+                  </a>
+                </div>
+                <div class="row">
+                  <img src="./images/bongja_2.png" width="60px" style="margin-top: 60px; margin-left: 160px;" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+  });
+  </script>
+
+  <script>
+    $("#sidebar").load("./sidebar.html");
+  </script>
+
+</body>
+
+</html>

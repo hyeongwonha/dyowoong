@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>됴웅</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="sidebar"></div>
+
+    <!-- navigator -->
+    <nav id="navbar">
+      <img class="separator" src="images/explore_nav_separator.png" />
+      <ul class="nav">
+        <li>
+          <img class="indicator" />
+          <a href="#section1">
+            <img class="text" src="images/explore_nav_1.png" />
+          </a>
+        </li>
+        <li>
+          <img class="indicator" />
+          <a href="#section2">
+            <img class="text" src="images/explore_nav_2.png" />
+          </a>
+        </li>
+        <li>
+          <img class="indicator" />
+          <a href="#section3">
+            <img class="text" src="images/explore_nav_3.png" />
+          </a>
+        </li>
+        <li>
+          <img class="indicator" />
+          <a href="#section4">
+            <img class="text" src="images/explore_nav_4.png" />
+          </a>
+        </li>
+        <li>
+          <img class="indicator" />
+          <a href="#section5">
+            <img class="text" src="images/explore_nav_5.png" />
+          </a>
+        </li>
+        <li>
+          <img class="indicator" />
+          <a href="#section6">
+            <img class="text" src="images/explore_nav_6.png" />
+          </a>
+        </li>
+      </ul>
+      <img class="separator" src="images/explore_nav_separator.png" />
+    </nav>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div style="position: fixed; top: 0; right: 0; padding-top: 20px; padding-right: 37px; z-index:100;" >
+        <a href="./tester.html">
+          <img src="./images/tester_button.png" width="160px" />
+        </a>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8 explore-content-wrapper">
+            <div id="section1">
+              <img src="images/explore_page_1.png" />
+            </div>
+            <div id="section2">
+              <img src="images/explore_page_2.png" />
+            </div>
+            <div id="section3">
+              <img src="images/explore_page_3.png" />
+            </div>
+            <div id="section4">
+              <img src="images/explore_page_4.png" />
+            </div>
+            <div id="section5">
+              <img src="images/explore_page_5.png" />
+            </div>
+            <div id="section6">
+              <img src="images/explore_page_6.png" />
+            </div>
+          </div>
+          <div class="col-sm-2"></div>
+        </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+  });
+  </script>
+
+  <script>
+    $("#sidebar").load("./sidebar.html");
+
+    $("body").scrollspy({ target: "#navbar" });
+    // add smooth scroll to all links
+    $("#navbar a").on("click", function(e) {
+      e.preventDefault();
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    });
+  </script>
+
+</body>
+
+</html>
