@@ -1,14 +1,14 @@
 .banner {
-  width: 108px;
-  height: 326px;
+  width: 79.2px;
+  height: 238.7px;
   -webkit-transition: width 0.15s, height 0.15s;
   transition: width 0.15s, height 0.15s;
   transition-timing-function: ease-in-out;
 }
 
 .banner:hover {
-  width: 112px;
-  height: 338px;
+  width: 82px;
+  height: 245.8px;
 }
 
 .fast {
@@ -28,11 +28,11 @@
 
 .bannerBox {
   position: fixed;
-  z-index: 100;
-  width: 109px;
+  z-index: 50;
+  width: 70px;
   left: 50%;
-  top: 130px;
-  margin-left: -54.5px;
+  top: 100px;
+  margin-left: -35px;
   content:url("../images/banner_box_empty.png")
 }
 
@@ -41,14 +41,13 @@
 }
 
 .menu {
+  display: inline-block;
   -webkit-transition: width 0.15s, height 0.15s;
   transition: width 0.15s, height 0.15s;
   transition-timing-function: ease-in-out;
-  width: 20%;
 }
 
 .menu:hover {
-  width: 20.5%;
 }
 
 .gone {

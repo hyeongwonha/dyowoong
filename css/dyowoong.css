@@ -1,9 +1,99 @@
+.grid {
+  background:url("../images/bg_grid.png") repeat;
+  background-size: 14px;
+}
+
 .dyowoong_logo {
-  width: 44px;
+  width: 24px;
   height: auto;
   position: fixed;
   z-index: 100;
   left: 50%;
-  margin-left: -22px;
+  margin-left: -12px;
   margin-top: 20px;
+}
+
+.button {
+  cursor: pointer;
+  -webkit-transition: width 0.15s, height 0.15s;
+  transition: width 0.15s, height 0.15s;
+  transition-timing-function: ease-in-out;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+#introduce_button img {
+  width: 181.04px;
+}
+
+#introduce_button img:hover {
+  width: 183.04px;
+}
+
+#tester_button img {
+  width: 159.14px;
+}
+
+#tester_button img:hover {
+  width: 161px;
+}
+
+#purchase_button img {
+  width: 100.74px;
+}
+
+#purchase_button img:hover {
+  width: 102px;
+}
+
+#banner_empty_1 {
+  width: 100px;
+}
+
+#banner_empty_1:hover {
+  width: 102px;
+} 
+
+#banner_empty_2 {
+  width: 100px;
+}
+
+#banner_empty_2:hover {
+  width: 102px;
+}
+
+#banner_empty_3 {
+  width: 100px;
+}
+
+#banner_empty_3:hover {
+  width: 102px;
+}
+
+.popup {
+  position: fixed;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: 50px;
+  z-index: 100;
+}
+
+img.details {
+  width: 100%;
+}
+
+@media(min-width: 768px) {
+  img.details {
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-bottom: -100px;
+  }
 }

@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/dyowoong.css" rel="stylesheet" >
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,48 +27,21 @@
 </head>
 
 <body>
-  <div id="wrapper">
-    <div id="sidebar"></div>
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-      <div style="position: fixed; top: 0; right: 0; padding-top: 20px; padding-right: 37px; z-index:100;" >
-        <a href="./tester.html">
-          <img src="./images/tester_button.png" width="160px" />
-        </a>
-      </div>
-
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-2"></div>
-          <div class="col-lg-8">
-            <img src="./images/purchase_page.png" width="100%"/>
-          </div>
-          <div class="col-lg-2"></div>
-        </div>
-      </div>
-    </div>
-    <!-- /#page-content-wrapper -->
-
+  <a href="./index.html">
+    <img class="dyowoong_logo" src="./images/logo.png" width="65px" height="auto"/>
+  </a>
+  <div id="container" class="grid">
+    <img class="details" id="introduce" src="./images/introduce_1.png" width="100%" />
+    <img class="details" src="./images/introduce_2.png" width="100%" />
+    <img class="details" id="tester" src="./images/tester.png" width="100%" />
+    <img class="details" id="purchase" src="./images/purchase.png" width="100%" />
   </div>
-  <!-- /#wrapper -->
 
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
 
   <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
-
-  <!-- Menu Toggle Script -->
-  <script>
-  $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-  });
-  </script>
-
-  <script>
-    $("#sidebar").load("./sidebar.html");
-  </script>
 
 </body>
 
