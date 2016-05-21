@@ -174,15 +174,14 @@ function init(container, popupContainer) {
   this.container = container;
   this.popupContainer = popupContainer;
   updateDimensions();
-  isBannerOpen = true;
-  spread(container);
+  isBannerOpen = false;
   
   // draw banner box
   bannerBox = document.createElement("img");
   var x = (width - bannerBoxWidth) / 2;
   var y = (height - bannerBoxHeight) / 2;
   $(bannerBox)
-    .addClass("button bannerBox")
+    .addClass("button bannerBox full")
     .appendTo($(container))
     .click(function() {
       if (!isBannerOpen) {
