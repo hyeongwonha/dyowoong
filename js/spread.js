@@ -107,14 +107,19 @@ function drawPopup(src) {
   $(container).click(function() {
     cleanPopup(); 
   });
+  $(popup).click(function() {
+    cleanPopup();
+  });
+  return popup;
 }
 
 function drawBannerPopup(index) {
   drawPopup("./images/banner_large/banner_large_" + (index+1) + ".png");
 }
 
-function drawEmptyBannerPopup(index) {
-  drawPopup("./images/banner_empty/banner_empty_large_" + (index+1) + ".png");
+function drawBannerEmptyPopup(index) {
+  var popup = drawPopup("./images/banner_empty/banner_empty_large_" + (index+1) + ".png");
+  $(popup).addClass("bannerEmptyPopup"); 
 }
 
 function cleanPopup() {
@@ -177,7 +182,7 @@ function drawButton() {
         .click(function(e) {
           if ($(".popup").length === 0) {
             e.stopPropagation();
-            drawEmptyBannerPopup($(this).data("number"));
+            drawBannerEmptyPopup($(this).data("number"));
           }
         })
         .appendTo($(container));

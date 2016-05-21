@@ -70,6 +70,11 @@
   z-index: 100;
 }
 
+.popup.bannerEmptyPopup {
+  width: 500px;
+  margin-left: -250px;
+}
+
 img.details {
   width: 100%;
 }
