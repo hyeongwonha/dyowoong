@@ -53,29 +53,13 @@
   width: 102px;
 }
 
-#banner_empty_1 {
+.bannerEmpty {
   width: 100px;
 }
 
-#banner_empty_1:hover {
+.bannerEmpty:hover {
   width: 102px;
 } 
-
-#banner_empty_2 {
-  width: 100px;
-}
-
-#banner_empty_2:hover {
-  width: 102px;
-}
-
-#banner_empty_3 {
-  width: 100px;
-}
-
-#banner_empty_3:hover {
-  width: 102px;
-}
 
 .popup {
   position: fixed;
