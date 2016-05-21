@@ -138,10 +138,22 @@ img.details {
 }
 
 .bannerBox:before {
+  position: fixed;
+  z-index: 50;
+  width: 70px;
+  left: 50%;
+  top: 100px;
+  margin-left: -35px;
   content:url("../images/banner_box_empty.png")
 }
 
 .bannerBox:after {
+  position: fixed;
+  z-index: 50;
+  width: 70px;
+  left: 50%;
+  top: 100px;
+  margin-left: -35px;
   content:url("../images/banner_box_empty.png")
 }
 
