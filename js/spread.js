@@ -16,6 +16,8 @@ var buttonId = ["introduce_button", "tester_button", "purchase_button"];
 var buttonLink = ["./details.html#introduce", "./details.html#tester", "./details.html#purchase"];
 var emptyBannerId = ["banner_empty_1", "banner_empty_2", "banner_empty_3"];
 
+var isBannerOpen;
+
 function updateDimensions() {
   width = $(container).width();
   banner_rows = Math.floor(width / (banner_width + banner_margin * 2));
@@ -66,28 +68,30 @@ function spread(container) {
 }
 
 function drawBanner(container) {
-  for (i=0; i<banner_num; i++) {
-    var x_offset = banner_width * Math.random() * 1.2;
-    var y_offset = banner_height * Math.random() * 1.2;
+  if (isBannerOpen) {
+    for (i=0; i<banner_num; i++) {
+      var x_offset = banner_width * Math.random() * 1.2;
+      var y_offset = banner_height * Math.random() * 1.2;
 
-    var x = bannerGrid[i] % banner_rows * (banner_width + banner_margin * 2) + x_offset;
-    var y = Math.floor(bannerGrid[i] / banner_rows) * (banner_height + banner_margin * 2) + y_offset;
+      var x = bannerGrid[i] % banner_rows * (banner_width + banner_margin * 2) + x_offset;
+      var y = Math.floor(bannerGrid[i] / banner_rows) * (banner_height + banner_margin * 2) + y_offset;
 
-    banner = document.createElement("img");
-    animation_list = ["fadeInDown fast", "fadeInDown normal", "fadeInDown slow"];
-    animation = animation_list[i%2];
-    $(banner)
-      .addClass("button banner animated " + animation)
-      .attr("id", "banner" + i)
-      .attr("style", "position: absolute; left: " + x + "px; top: " + y + "px;")
-      .attr("src", "./images/banner.png")
-      .click(function(e) {
-        if ($(".popup").length === 0) {
-          e.stopPropagation();
-          drawPopup(1);
-        }
-      })
-      .appendTo($(container));
+      banner = document.createElement("img");
+      animation_list = ["fadeInDown fast", "fadeInDown normal", "fadeInDown slow"];
+      animation = animation_list[i%2];
+      $(banner)
+        .addClass("button banner animated " + animation)
+        .attr("id", "banner" + i)
+        .attr("style", "position: absolute; left: " + x + "px; top: " + y + "px;")
+        .attr("src", "./images/banner.png")
+        .click(function(e) {
+          if ($(".popup").length === 0) {
+            e.stopPropagation();
+            drawPopup(1);
+          }
+        })
+        .appendTo($(container));
+    }
   }
 }
 
@@ -123,54 +127,54 @@ function clean() {
 }
 
 function drawButton() {
-  
-  for (var i=0; i<buttonId.length; i++) {
-    var x_offset = banner_width * Math.random() * 1.0;
-    var y_offset = banner_height * Math.random() * 1.0;
+  if (isBannerOpen) { 
+    for (var i=0; i<buttonId.length; i++) {
+      var x_offset = banner_width * Math.random() * 1.0;
+      var y_offset = banner_height * Math.random() * 1.0;
 
-    var x = bannerGrid[i] % banner_rows * (banner_width + banner_margin * 2) + x_offset;
-    var y = Math.floor(bannerGrid[i] / banner_rows) * (banner_height + banner_margin * 2) + y_offset;
+      var x = bannerGrid[i] % banner_rows * (banner_width + banner_margin * 2) + x_offset;
+      var y = Math.floor(bannerGrid[i] / banner_rows) * (banner_height + banner_margin * 2) + y_offset;
 
-    menu = document.createElement("a");
-    $(menu)
-      .addClass("menu animated fadeInDown")
-      .attr("id", buttonId[i])
-      .html("<img class=\"button\" src=\"./images/" + buttonId[i] + ".gif\" />")
-      .attr("style", "position: absolute; left: " + x + "px; top: " + y + "px; z-index: 100;")
-      .attr("href", buttonLink[i])
-      .appendTo($(container));
+      menu = document.createElement("a");
+      $(menu)
+        .addClass("menu animated fadeInDown")
+        .attr("id", buttonId[i])
+        .html("<img class=\"button\" src=\"./images/" + buttonId[i] + ".gif\" />")
+        .attr("style", "position: absolute; left: " + x + "px; top: " + y + "px; z-index: 100;")
+        .attr("href", buttonLink[i])
+        .appendTo($(container));
+    }
+
+    var i_offset = buttonId.length;
+    for (var i=0; i<emptyBannerId.length; i++) {
+      var x_offset = banner_width * Math.random() * 1.0;
+      var y_offset = banner_height * Math.random() * 1.0;
+
+      var x = bannerGrid[i+i_offset] % banner_rows * (banner_width + banner_margin * 2) + x_offset;
+      var y = Math.floor(bannerGrid[i+i_offset] / banner_rows) * (banner_height + banner_margin * 2) + y_offset;
+
+      button = document.createElement("img");
+      $(button)
+        .addClass("button menu animated fadeInDown")
+        .attr("id", emptyBannerId[i])
+        .attr("src", "./images/" + emptyBannerId[i] + ".gif")
+        .attr("style", "position: absolute; left: " + x + "px; top: " + y + "px; z-index: 100;")
+        .click(function(e) {
+          if ($(".popup").length === 0) {
+            e.stopPropagation();
+            drawPopup(1);
+          }
+        })
+        .appendTo($(container));
+    }
   }
-
-  var i_offset = buttonId.length;
-  for (var i=0; i<emptyBannerId.length; i++) {
-    var x_offset = banner_width * Math.random() * 1.0;
-    var y_offset = banner_height * Math.random() * 1.0;
-
-    var x = bannerGrid[i+i_offset] % banner_rows * (banner_width + banner_margin * 2) + x_offset;
-    var y = Math.floor(bannerGrid[i+i_offset] / banner_rows) * (banner_height + banner_margin * 2) + y_offset;
-
-    button = document.createElement("img");
-    $(button)
-      .addClass("button menu animated fadeInDown")
-      .attr("id", emptyBannerId[i])
-      .attr("src", "./images/" + emptyBannerId[i] + ".gif")
-      .attr("style", "position: absolute; left: " + x + "px; top: " + y + "px; z-index: 100;")
-      .click(function(e) {
-        if ($(".popup").length === 0) {
-          e.stopPropagation();
-          drawPopup(1);
-        }
-      })
-      .appendTo($(container));
-  }
-
-
 }
 
 function init(container, popupContainer) {
   this.container = container;
   this.popupContainer = popupContainer;
   updateDimensions();
+  isBannerOpen = true;
   spread(container);
   
   // draw banner box
@@ -181,10 +185,12 @@ function init(container, popupContainer) {
     .addClass("button bannerBox")
     .appendTo($(container))
     .click(function() {
-      if ($(bannerBox).hasClass("full")) {
+      if (!isBannerOpen) {
+        isBannerOpen = true;
         spread(container);
         $(bannerBox).removeClass("full");
       } else {
+        isBannerOpen = false;
         clean();
         $(bannerBox).addClass("full");
       }
